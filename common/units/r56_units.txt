@@ -4,8 +4,8 @@ sub_units = {
 		sprite = infantry
 		map_icon_category = infantry
 		
-		priority = 600
-		ai_priority = 200
+		priority = 100
+		ai_priority = 100
 		active = no
 
 		type = {
@@ -30,7 +30,7 @@ sub_units = {
 		default_morale = 0.2
 		maximum_speed = 0.35 #Countered by terrain changes + no combo'ing with other units in the same template
 		manpower = 1400 #More manpower than infantry equipment vs infantry
-		supply_consumption = 0.05 #We're low maintance
+		supply_consumption = 0.04 #We're low maintance
 		suppression = 0.1 #We cannot police worth shit
 		weight = 0.5
 
@@ -72,12 +72,13 @@ sub_units = {
 		}
 		urban = {
 			attack = -0.15 #Urban assualt is above my paygrade
+			defence = 0.15 #I can do this doe
 		}
 		forest = {
 			movement = -0.35
 		}
 		fort = {
-			attack = -0.15
+			attack = -0.75 #You're a funny guy
 		}
 		hills = {
 			movement = -0.35
@@ -86,6 +87,526 @@ sub_units = {
 		need = {
 			infantry_equipment = 80
 		}
+	}
+
+	#Light Infantry
+	jaeger = { #More training time and equipment 
+		abbreviation = "JAE"
+		sprite = infantry
+		map_icon_category = infantry
+		
+		
+		priority = 3000
+		ai_priority = 2
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+
+		
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120
+		suppression = 1.5
+		weight = 0.5
+		supply_consumption = 0.06
+	
+		need = {
+			infantry_equipment = 120
+		}
+
+		acclimatization_cold_climate_gain_factor = 0.1
+
+		forest = {
+			attack = 0.15 
+			defence = 0.15 
+			movement = 0.25 
+		}
+		marsh = {
+			movement = 0.1 #Light infantry after all
+		}
+		mountain = {
+			movement = 0.1 #Light infantry after all
+		}
+		river = {
+			movement = 0.10 #Light infantry after all
+		}
+		amphibious = {
+			movement = 0.10 #Light infantry after all
+		}
+		river = {
+			movement = 0.10 #Light infantry after all
+		}
+		amphibious = {
+			movement = 0.10 #Light infantry after all
+		}
+		plains = {
+			movement = 0.10 #Light infantry after all
+		}
+		hills = {
+			movement = 0.10 #Light infantry after all
+		}
+		jungle = {
+			movement = 0.10 #Light infantry after all
+		}
+	}
+	
+	jungletroop = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		
+		priority = 3000
+		ai_priority = 2
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120
+		suppression = 1.5
+		weight = 0.5
+		supply_consumption = 0.06
+	
+		need = {
+			infantry_equipment = 120
+		}
+
+		acclimatization_hot_climate_gain_factor = 0.25
+
+		jungle = {
+			attack = 0.15
+			defence = 0.15
+			movement = 0.25
+		}
+		marsh = {
+			movement = 0.1 #Light infantry after all
+		}
+		mountain = {
+			movement = 0.10 #Light infantry after all
+		}
+		river = {
+			movement = 0.10 #Light infantry after all
+		}
+		amphibious = {
+			movement = 0.10 #Light infantry after all
+		}
+		river = {
+			movement = 0.10 #Light infantry after all
+		}
+		amphibious = {
+			movement = 0.10 #Light infantry after all
+		}
+		plains = {
+			movement = 0.10 #Light infantry after all
+		}
+		hills = {
+			movement = 0.10 #Light infantry after all
+		}		
+	}
+
+	desertinfantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		
+		
+		priority = 3000
+		ai_priority = 2
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120
+		suppression = 2
+		weight = 0.5
+		supply_consumption = 0.08
+	
+		need = {
+			infantry_equipment = 100
+			support_equipment = 5
+		}
+
+		acclimatization_hot_climate_gain_factor = 0.1
+
+		desert = {
+			attack = 0.15
+			defence = 0.10
+			movement = 0.15
+		}
+		hills = {
+			movement = 0.10
+		}
+		plains = {
+			movement = 0.10
+		}
+	}
+
+	#Rt56 Special Forces
+	shocktroop = { #Model after mountaineers
+		sprite = infantry
+		abbreviation = "SHT"
+		map_icon_category = infantry
+		special_forces = yes
+
+		priority = 1
+		ai_priority = 1
+		active = no
+
+		type = {
+			infantry
+		}
+
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_special_forces
+		}	
+
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 70
+		default_morale = 0.4
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120
+		suppression = 1
+		weight = 0.5
+
+		supply_consumption = 0.065 
+		breakthrough = 0.4 #The important stat
+	
+		need = {
+			infantry_equipment = 150
+		}
+
+		fort = { 
+			attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+
+		urban = {
+			attack = 0.35
+			defence = 0.1
+			movement = 0.2
+		}
+	}
+	
+	mot_shocktroop = { #Model after normal mechs
+		abbreviation = "SHM"
+		sprite = motorized
+		map_icon_category = infantry
+		special_forces = yes
+		
+		
+		priority = 598
+		ai_priority = 199
+		active = no
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_special_forces
+		}
+		
+		combat_width = 2
+
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.30 
+		manpower = 1200 
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 2.2
+		weight = 0.75
+
+		supply_consumption = 0.07 
+		breakthrough = 0.1 #The important stat
+		
+		# this is what moves us and sets speed
+		transport = motorized_equipment
+
+		need = {
+			infantry_equipment = 150
+			motorized_equipment = 35
+		}
+
+		urban = {
+			attack = 0.25
+			defence = 0.1
+			movement = 0.2
+		}
+		fort = { 
+			attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.5
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.3
+		}
+		river = {
+			attack = -0.1
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+
+	mec_shocktroop = { #model after mechanized
+		abbreviation = "SHE"
+		sprite = mechanized
+		map_icon_category = infantry
+		special_forces = yes
+
+		priority = 608
+		ai_priority = 198
+		active = yes
+
+		type = {
+			mechanized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_special_forces
+		}
+
+		combat_width = 2
+
+		#Offensive Abilities
+		soft_attack = 0.1
+		hard_attack = 4.0
+		
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1200
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 2
+		weight = 1
+		
+		supply_consumption = 0.145
+		breakthrough = 0.15 #The important stat
+		
+		# needed since we give so much bonus to infantry even with no mech equipment
+		essential = {
+			infantry_equipment
+			mechanized_equipment
+		}
+
+		# this is what moves us and sets speed
+		transport = mechanized_equipment
+
+		need = {
+			mechanized_equipment = 40
+			infantry_equipment = 150
+		}
+
+		fort = { 
+			attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+		urban = {
+			attack = 0.1
+			defence = 0.05
+			movement = 0.2
+		}
+		forest = {
+			attack = -0.2
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.3
+		}
+		marsh = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+		amphibious = {
+			attack = -0.4
+		}
+
+		#hardness = 0.2 moving these buffs to unit stats
+	}
+
+	modern_mechanized = {
+		abbreviation = "MME"
+		sprite = mechanized
+		map_icon_category = armored
+
+		priority = 611
+		ai_priority = 201
+		active = no
+		
+		type = {
+			mechanized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+
+
+		combat_width = 2
+
+		need = {
+			modern_mechanized_chassis = 40
+		}
+
+		manpower = 1200
+		max_organisation = 60
+		default_morale = 0.3
+		max_strength = 30
+
+		#Misc Abilities
+		training_time = 180
+		suppression = 2
+		weight = 1
+
+		supply_consumption = 0.145
+
+		essential = {
+			infantry_equipment
+			modern_mechanized_chassis
+		}
+
+		# this is what moves us and sets speed
+		transport = modern_mechanized_chassis
+
+		need = {
+			modern_mechanized_chassis = 40
+			infantry_equipment = 100
+		}
+
+		forest = {
+			attack = -0.2
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.3
+		}
+		marsh = {
+			attack = -0.1
+		}
+		urban = {
+			attack = -0.2
+			defence = -0.05
+		}
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+		amphibious = {
+			attack = -0.35
+		}
+
 	}
 	
 }

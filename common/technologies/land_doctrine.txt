@@ -2678,6 +2678,8 @@ technologies = {
 		#enable_tactic = tactic_human_wave_tactics
 
 		land_reinforce_rate = 0.02
+		training_time_factor = -0.02 #token extra stat to make the doctrine a tiny bit better
+		planning_speed = 0.02 #token extra stat to make the doctrine a tiny bit better
 		minimum_training_level = -0.1
 
 		doctrine = yes
@@ -2724,6 +2726,7 @@ technologies = {
 		#reduced pocketed combat penalty and/or reduces the out of supply penalty or increases time before moving to worse penalty
 		no_supply_grace = 48 # more hours before supply penalty changes
 		out_of_supply_factor = -0.10
+		special_forces_out_of_supply_factor = -0.1
 		pocket_penalty = -0.1
 
 		path = {
@@ -2818,7 +2821,7 @@ technologies = {
 		}
 
 
-
+		no_supply_grace = 10 #token extra stat to make the doctrine a tiny bit better
 		supply_consumption_factor = -0.10
 
 		enable_tactic = tactic_relentless_assault
@@ -2888,6 +2891,12 @@ technologies = {
 			max_organisation = 2
 		}
 		armored_car = {
+			max_organisation = 2
+		}
+		mot_shocktroop = {
+			max_organisation = 2
+		}
+		shocktroop = {
 			max_organisation = 2
 		}
 
@@ -3130,7 +3139,8 @@ technologies = {
 			default_morale = 0.1
 		}
 		mot_shocktroop = {
-			max_organisation = 1
+			max_organisation = 10
+			default_morale = 0.1
 		}
 
 		path = {
@@ -3483,6 +3493,96 @@ technologies = {
 			factor = 0.1
 		}
 
+		path = {
+			leads_to_tech = r56_double_envelopment_mass
+			research_cost_coeff = 1
+		}
+
+		ai_research_weights = {
+			industry = 2.0
+		}
+	}
+
+	r56_double_envelopment_mass = { #These next two are supposed to be very bad. Don't buff - SpicyAlfredo
+		xp_research_type = army
+		xp_unlock_cost = 100
+
+
+		army_core_attack_factor = 0.05
+
+
+		doctrine = yes
+		research_cost = 4.5
+
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+
+		path = {
+			leads_to_tech = r56_last_stand_mass
+			research_cost_coeff = 1
+		}
+
+		enable_tactic = tactic_double_envelopment
+
+
+		ai_research_weights = {
+			industry = 2.0
+		}
+	}
+
+	r56_last_stand_mass = { 
+
+		text = r56_last_stand
+
+		xp_research_type = army
+		xp_unlock_cost = 100
+		xp_research_bonus = 1.00
+		max_dig_in = 5
+		pocket_penalty = -0.05
+		out_of_supply_factor = -0.05
+
+
+		doctrine = yes
+		research_cost = 4.5
+
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 18 }
+		}
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+
 		ai_research_weights = {
 			industry = 2.0
 		}
@@ -3493,14 +3593,14 @@ technologies = {
 		doctrine_name = "ASYMMETRICAL_WARFARE_DOCTRINE"
 
 		xp_research_type = army
-		xp_unlock_cost = 125 #Not a mistake. You pay a price to respec your force into being Asymmetrical 
+		xp_unlock_cost = 200 #Not a mistake. You pay a price to respec your force into being Asymmetrical 
 
 
 		xor = { superior_firepower trench_warfare mass_assault mobile_warfare }
 		resistance_growth_on_our_occupied_states = 0.25 #Should lead to stupid resistance growth, which is the point - SpicyAlfredo
 		out_of_supply_factor = -0.05
 		enemy_army_bonus_air_superiority_factor = -0.05
-		resistance_damage_to_garrison_on_our_occupied_states = 0.05
+		pocket_penalty = -0.05
 		no_supply_grace = 5 #token extra stat
 
 	
@@ -3579,6 +3679,7 @@ technologies = {
 
 		army_core_attack_factor = 0.03 #Was ten
 		land_night_attack = 0.03 #Was ten
+		resistance_damage_to_garrison_on_our_occupied_states = 0.03
 
 
 		doctrine = yes
