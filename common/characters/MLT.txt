@@ -1,0 +1,80 @@
+characters={
+    MLT_charles_bonham_carter={
+		name="Charles Bonham-Carter"
+		portraits={
+			civilian={
+				large="gfx/leaders/r56_generic/portrait_commonwealth_generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism_n
+			traits = { war_veteran reformer }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MLT_enrico_mizzi={
+		name="Enrico Mizzi"
+		portraits={
+			civilian={
+				large="GFX_Enrico_Mizzi_Leader"
+				small="GFX_Enrico_Mizzi_Advisor"
+			}
+		}
+		advisor={
+			cost = 150
+			slot = political_advisor
+			idea_token = enrico_mizzi
+			allowed = {
+				original_tag = MLT
+			}
+			available = {
+				has_completed_focus = MLT_promote_fascist_ideas
+			}
+			traits = {
+				fascist_demagogue
+			}
+			ai_will_do = {
+				factor = 1.0
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = { editor patriot }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MLT_gerald_strickland={
+		name="Gerald Strickland"
+		portraits={
+			civilian={
+				large="GFX_Enrico_Mizzi_Leader"
+				small="GFX_Enrico_Mizzi_Advisor"
+			}
+		}
+		advisor={
+			cost = 150
+			slot = political_advisor
+			idea_token = gerald_strickland
+			allowed = {
+				original_tag = MLT
+			}
+			available = {
+				has_completed_focus = MLT_demand_constitutional_reinstatement
+			}
+			traits = {
+				democratic_reformer
+			}
+			ai_will_do = {
+				factor = 1.0
+			}
+		}
+		country_leader={
+			ideology=democracy_liberalism
+			traits = { }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+}

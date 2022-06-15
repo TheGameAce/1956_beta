@@ -1,0 +1,1475 @@
+focus_tree = {
+	id = malta_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = MLT
+		}
+	}
+    default = no
+	
+	continuous_focus_position = { x = 90 y = 2000 }
+    focus = {
+		id = MLT_political_reforms
+		icon = GFX_goal_generic_business_bills
+		cost = 10
+        mutually_exclusive = { focus = MLT_take_advantage_of_the_turmoil }
+		x = -7
+		y = 0
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+						swap_ideas = {
+				remove_idea = mlt_political_turmoil
+				add_idea = mlt_political_turmoil_1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	###Historical Authoritarian Political Focuses###
+
+    focus = {
+		id = MLT_continue_the_reforms
+		icon = GFX_goal_changing_times
+		cost = 10
+        prerequisite = { focus = MLT_political_reforms }
+		mutually_exclusive = { focus = MLT_demand_constitutional_reinstatement }
+		x = -4
+		y = 1
+        relative_position_id = MLT_political_reforms
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mlt_political_turmoil_1
+				add_idea = MLT_political_turmoil_3
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = MLT_form_a_constitutional_body
+		icon = GFX_goal_changing_times
+		cost = 10
+        prerequisite = { focus = MLT_continue_the_reforms }
+		x = 0
+		y = 1
+        relative_position_id = MLT_continue_the_reforms
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = MLT_constitutional_revisionments
+		icon = GFX_goal_changing_times
+		cost = 10
+        prerequisite = { focus = MLT_form_a_constitutional_body }
+		x = -1
+		y = 1
+        relative_position_id = MLT_form_a_constitutional_body
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = MLT_establish_an_executive_council
+		icon = GFX_goal_changing_times
+		cost = 10
+        prerequisite = { focus = MLT_form_a_constitutional_body }
+		x = 1
+		y = 1
+        relative_position_id = MLT_form_a_constitutional_body
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_first_revisionment
+		icon = GFX_goal_changing_times
+		cost = 10
+        prerequisite = { focus = MLT_establish_an_executive_council }
+		prerequisite = { focus = MLT_constitutional_revisionments }
+		x = -1
+		y = 1
+        relative_position_id = MLT_establish_an_executive_council
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+    
+	###Shared Focuses - Authoritarian & Democratic###
+	
+	focus = {
+		id = MLT_settle_the_language_question
+		icon = GFX_goal_generic_multipartism
+		cost = 10
+		prerequisite = { focus = MLT_establish_an_executive_council 
+			focus = MLT_restore_our_parliament	}
+		x = 3
+		y = 1
+        relative_position_id = MLT_establish_an_executive_council
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			country_event = malta.4
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+	
+	###Fascist & Communist Path Start###
+	
+	
+	focus = {
+		id = MLT_take_advantage_of_the_turmoil
+		icon = GFX_goal_generic_backstab
+		cost = 10
+		mutually_exclusive = { focus = MLT_political_reforms }
+		x = 9
+		y = 0
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+			swap_ideas = {
+				remove_idea = mlt_political_turmoil
+				add_idea = mlt_political_turmoil_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	###Democratic Political Focuses###
+
+    focus = {
+		id = MLT_demand_constitutional_reinstatement
+		icon = GFX_goal_generic_repeal_opressive_law
+		cost = 10
+		mutually_exclusive = { focus = MLT_continue_the_reforms }
+        prerequisite = { focus = MLT_political_reforms }
+		x = 4
+		y = 1
+        relative_position_id = MLT_political_reforms
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			remove_ideas = mlt_repealed_constitution
+			add_stability = -0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_restore_public_offices
+		icon = GFX_goal_generic_citizens
+		cost = 10
+        prerequisite = { focus = MLT_demand_constitutional_reinstatement }
+		x = 1
+		y = 1
+        relative_position_id = MLT_demand_constitutional_reinstatement
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = -0.05
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_restore_the_position_of_prime_minister
+		icon = GFX_goal_generic_repeal_opressive_law
+		cost = 10
+        prerequisite = { focus = MLT_demand_constitutional_reinstatement }
+		x = -1
+		y = 1
+        relative_position_id = MLT_demand_constitutional_reinstatement
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = -0.05
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_restore_our_parliament
+		icon = GFX_goal_generic_multipartism
+		cost = 10
+        prerequisite = { focus = MLT_restore_the_position_of_prime_minister }
+		x = 0
+		y = 1
+        relative_position_id = MLT_restore_the_position_of_prime_minister
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_fair_representation_in_parliament
+		icon = GFX_goal_generic_multipartism
+		cost = 10
+        prerequisite = { focus = MLT_restore_public_offices }
+		x = 0
+		y = 1
+        relative_position_id = MLT_restore_public_offices
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_return_to_self_rule
+		icon = GFX_goal_generic_election
+		cost = 10
+        prerequisite = { focus = MLT_restore_our_parliament }
+		prerequisite = { focus = MLT_fair_representation_in_parliament }
+		x = 1
+		y = 1
+        relative_position_id = MLT_restore_our_parliament
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 60
+			}
+
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.20
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_an_independent_malta
+		icon = GFX_goal_generic_freedom
+		cost = 10
+        prerequisite = { focus = MLT_return_to_self_rule }
+		mutually_exclusive = { focus = MLT_loyalty_to_england }
+		x = 2
+		y = 1
+        relative_position_id = MLT_return_to_self_rule
+		ai_will_do = {
+			factor = 2
+		}
+		
+		bypass = {
+			is_subject = no
+		}
+
+		completion_reward = {
+			ENG = {
+				set_autonomy = {
+					target = MLT
+					autonomy_state = autonomy_free
+				}
+
+				add_opinion_modifier = { target = MLT modifier = medium_decrease }
+			}
+			leave_faction = yes
+			add_political_power = -50
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_loyalty_to_england
+		icon = GFX_goal_generic_foreign_diplomacy2
+		cost = 10
+        prerequisite = { focus = MLT_return_to_self_rule }
+		mutually_exclusive = { focus = MLT_an_independent_malta }
+		x = -2
+		y = 1
+        relative_position_id = MLT_return_to_self_rule
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			OR = {
+			ENG = { democratic > 0.85 }
+			}
+			is_subject_of = ENG
+		}
+
+		completion_reward = {
+			ENG = {
+			add_opinion_modifier = { target = MLT modifier = huge_increase }
+			}
+			add_political_power = 100
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_request_dominion_status
+		icon = GFX_goal_generic_major_diplo
+		cost = 10
+        prerequisite = { focus = MLT_loyalty_to_england }
+		x = -1
+		y = 1
+        relative_position_id = MLT_loyalty_to_england
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			OR = {
+			ENG = { has_government = democratic }
+			}
+			is_subject_of = ENG
+		}
+
+		completion_reward = {
+			OVERLORD = { country_event = malta.1 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_safeguard_gibraltar
+		icon = GFX_goal_generic_peaceful_diplomacy
+		cost = 10
+        prerequisite = { focus = MLT_request_dominion_status }
+		x = -1
+		y = 1
+        relative_position_id = MLT_request_dominion_status
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			is_in_faction_with = ENG
+			ENG = {
+				owns_state = 118
+				controls_state = 118
+			}
+		}
+
+		bypass = {
+			ENG = {
+				NOT = {
+					owns_state = 118
+					controls_state = 118
+				}
+			}
+		}
+
+		completion_reward = {
+			OVERLORD = { country_event = malta.2 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_safeguard_cyprus
+		icon = GFX_goal_generic_peaceful_diplomacy
+		cost = 10
+        prerequisite = { focus = MLT_request_dominion_status }
+		x = 1
+		y = 1
+        relative_position_id = MLT_request_dominion_status
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			is_in_faction_with = ENG
+			ENG = {
+				owns_state = 183
+				controls_state = 183
+			}
+		}
+
+		bypass = {
+			ENG = {
+				NOT = {
+					owns_state = 183
+					controls_state = 183
+				}
+			}
+		}
+
+		completion_reward = {
+			OVERLORD = { country_event = malta.3 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_pearl_of_the_mediterranean
+		icon = GFX_goal_generic_repeal_opressive_law
+		cost = 10
+        prerequisite = { focus = MLT_safeguard_cyprus }
+		prerequisite = { focus = MLT_safeguard_gibraltar }
+		x = -1
+		y = 1
+        relative_position_id = MLT_safeguard_cyprus
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_ideas = MLT_pearl_of_the_mediterranean_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_request_british_industrial_support
+		icon = GFX_goal_generic_light_industry
+		cost = 10
+        prerequisite = { focus = MLT_pearl_of_the_mediterranean }
+		x = -1
+		y = 1
+        relative_position_id = MLT_pearl_of_the_mediterranean
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			is_in_faction_with = ENG
+		}
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+			add_opinion_modifier = { target = ENG modifier = small_increase }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_request_british_military_support
+		icon = GFX_goal_generic_munitions_factories
+		cost = 10
+        prerequisite = { focus = MLT_pearl_of_the_mediterranean }
+		x = 1
+		y = 1
+        relative_position_id = MLT_pearl_of_the_mediterranean
+		ai_will_do = {
+			factor = 2
+		}
+		
+		available = {
+			is_in_faction_with = ENG
+		}
+
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 4 }
+			add_opinion_modifier = { target = ENG modifier = small_increase }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_defenders_of_democracy
+		icon = GFX_goal_generic_democratic_army
+		cost = 10
+        prerequisite = { focus = MLT_request_british_military_support }
+		prerequisite = { focus = MLT_request_british_industrial_support }
+		x = -1
+		y = 1
+        relative_position_id = MLT_request_british_military_support
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_ideas = MLT_defenders_of_democracy_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_democracy_in_the_mediterranean
+		icon = GFX_goal_generic_liberty
+		cost = 10
+        prerequisite = { focus = MLT_an_independent_malta }
+		x = 1
+		y = 1
+        relative_position_id = MLT_an_independent_malta
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_ideas = MLT_mediterranean_democracy_idea
+			set_rule = { can_send_volunteers = yes }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_support_italian_democracy
+		icon = GFX_goal_generic_befriend_italy
+		cost = 7.2
+        prerequisite = { focus = MLT_democracy_in_the_mediterranean }
+		x = -1
+		y = 1
+        relative_position_id = MLT_democracy_in_the_mediterranean
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			ITA = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			ALB = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			add_political_power = 25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_support_spanish_democracy
+		icon = GFX_goal_generic_befriend_spain
+		cost = 7.2
+        prerequisite = { focus = MLT_democracy_in_the_mediterranean }
+		x = 1
+		y = 1
+        relative_position_id = MLT_democracy_in_the_mediterranean
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			SPR = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			add_political_power = 25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_support_yugoslavian_democracy
+		icon = GFX_goal_generic_befriend_yugoslavia
+		cost = 7.2
+        prerequisite = { focus = MLT_democracy_in_the_mediterranean }
+		x = 3
+		y = 1
+        relative_position_id = MLT_democracy_in_the_mediterranean
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			YUG = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			add_political_power = 25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_support_turkish_democracy
+		icon = GFX_goal_generic_befriend_turkey
+		cost = 7.2
+        prerequisite = { focus = MLT_support_italian_democracy
+							focus = MLT_support_spanish_democracy	 }
+		x = 1
+		y = 1
+        relative_position_id = MLT_support_italian_democracy
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			TUR = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			add_political_power = 25
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_support_greek_democracy
+		icon = GFX_goal_generic_befriend_greece
+		cost = 7.2
+        prerequisite = { focus = MLT_support_yugoslavian_democracy
+							focus = MLT_support_spanish_democracy	 }
+		x = -1
+		y = 1
+        relative_position_id = MLT_support_yugoslavian_democracy
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			GRE = {add_timed_idea = { idea= democratic_influence_strong days = 1000 } }
+			add_political_power = 25
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		}
+	}
+
+	focus = {
+		id = MLT_mediterranean_coalition
+		icon = GFX_goal_generic_foreign_diplomacy
+		cost = 10
+        prerequisite = { focus = MLT_support_turkish_democracy }
+		prerequisite = { focus = MLT_support_greek_democracy }
+		x = 1
+		y = 1
+        relative_position_id = MLT_support_turkish_democracy
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			create_faction = "Mediterranean Coalition"
+			every_other_country = {
+				limit = {
+					OR = { tag = SPR tag = ITA tag = GRE tag = YUG tag = TUR tag = ALB }
+					has_government = democratic
+				}
+			country_event = generic.5
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_coalition_mutual_economic_support
+		icon = GFX_goal_war_infrastructure
+		cost = 14.4
+        prerequisite = { focus = MLT_mediterranean_coalition }
+		x = -2
+		y = 1
+        relative_position_id = MLT_mediterranean_coalition
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			every_country = {
+			limit = { is_in_faction_with = MLT }
+				add_offsite_building = { type = arms_factory level = 2 }
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_ideas = MLT_coalition_economic_support_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_champions_of_democracy
+		icon = GFX_goal_generic_liberty
+		cost = 14.4
+        prerequisite = { focus = MLT_mediterranean_coalition }
+		x = 0
+		y = 1
+        relative_position_id = MLT_mediterranean_coalition
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			every_country = {
+				limit = { is_in_faction_with = MLT }
+				add_ideas = MLT_champion_of_democracy_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_coalition_military_operations
+		icon = GFX_goal_wargaming
+		cost = 10
+        prerequisite = { focus = MLT_mediterranean_coalition }
+		x = 2
+		y = 1
+        relative_position_id = MLT_mediterranean_coalition
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			every_country = {
+			limit = { is_in_faction_with = MLT }
+				add_doctrine_cost_reduction = {
+					name = land_doc_bonus
+					cost_reduction = 0.75
+					uses = 2
+					category = land_doctrine
+				}
+				army_experience = 100
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+
+###Democratic Focuses - Both Sides###
+
+	focus = {
+		id = MLT_remember_sette_giugno
+		icon = GFX_goal_generic_repeal_opressive_law
+		cost = 10
+        prerequisite = { focus = MLT_loyalty_to_england
+							focus = MLT_an_independent_malta }
+		x = 2
+		y = 1
+        relative_position_id = MLT_loyalty_to_england
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mlt_political_turmoil_1
+				add_idea = MLT_political_turmoil_3
+			}
+			add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_address_political_instability
+		icon = GFX_goal_generic_deals
+		cost = 10
+        prerequisite = { focus = MLT_remember_sette_giugno }
+		x = 0
+		y = 5
+        relative_position_id = MLT_remember_sette_giugno
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mlt_political_turmoil_3
+				add_idea = mlt_political_turmoil_4
+			}
+			add_political_power = 50
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_apology_to_the_church
+		icon = GFX_goal_christianity_and_state
+		cost = 10
+        prerequisite = { focus = MLT_address_political_instability }
+		x = -2
+		y = 1
+        relative_position_id = MLT_address_political_instability
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_stability = 0.10
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_constitutional_amendments
+		icon = GFX_goal_constitution
+		cost = 10
+        prerequisite = { focus = MLT_address_political_instability }
+		x = 0
+		y = 1
+        relative_position_id = MLT_address_political_instability
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_stability = 0.10
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_make_amends_with_the_nationalists
+		icon = GFX_goal_generic_fascist_bills
+		cost = 10
+        prerequisite = { focus = MLT_address_political_instability }
+		x = 2
+		y = 1
+        relative_position_id = MLT_address_political_instability
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_stability = 0.10
+			remove_ideas = MLT_italian_irredentism
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_education_reforms
+		icon = GFX_goal_generic_education
+		cost = 10
+        prerequisite = { focus = MLT_apology_to_the_church }
+		prerequisite = { focus = MLT_constitutional_amendments }
+		prerequisite = { focus = MLT_make_amends_with_the_nationalists }
+		x = -1
+		y = 1
+        relative_position_id = MLT_constitutional_amendments
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_equal_rights_for_women
+		icon = GFX_goal_womens_rights
+		cost = 10
+        prerequisite = { focus = MLT_apology_to_the_church }
+		prerequisite = { focus = MLT_constitutional_amendments }
+		prerequisite = { focus = MLT_make_amends_with_the_nationalists }
+		x = 1
+		y = 1
+        relative_position_id = MLT_constitutional_amendments
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_ideas = MLT_womens_rights_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_a_stable_democracy
+		icon = GFX_goal_generic_liberty
+		cost = 10
+        prerequisite = { focus = MLT_constitutional_amendments }
+		prerequisite = { focus = MLT_education_reforms }
+		prerequisite = { focus = MLT_equal_rights_for_women }
+		x = 0
+		y = 2
+        relative_position_id = MLT_constitutional_amendments
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			remove_ideas = MLT_political_turmoil_4
+			add_ideas = MLT_political_stability
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+
+	###Fascist Political Focuses###
+
+    focus = {
+		id = MLT_promote_fascist_ideas
+		icon = GFX_goal_generic_fascist_bills
+		cost = 10
+		mutually_exclusive = { focus = MLT_revolutionary_ideas }
+        prerequisite = { focus = MLT_take_advantage_of_the_turmoil }
+		x = -4
+		y = 1
+        relative_position_id = MLT_take_advantage_of_the_turmoil
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mlt_repealed_constitution
+				add_idea = MLT_repealed_constitution_1
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_italian_heritage
+		icon = italian_cooperation
+		cost = 10
+		mutually_exclusive = { focus = MLT_heritage_of_conquest }
+        prerequisite = { focus = MLT_promote_fascist_ideas }
+		x = 2
+		y = 1
+        relative_position_id = MLT_promote_fascist_ideas
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	###Fascist Knights Political Focuses###
+
+	focus = {
+		id = MLT_heritage_of_conquest
+		icon = GFX_goal_generic_bills
+		cost = 10
+		mutually_exclusive = { focus = MLT_italian_heritage }
+        prerequisite = { focus = MLT_promote_fascist_ideas }
+		x = -2
+		y = 1
+        relative_position_id = MLT_promote_fascist_ideas
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+    
+	###Communist Political Focuses###
+	
+	focus = {
+		id = MLT_revolutionary_ideas
+		icon = GFX_goal_generic_communist_pride
+		cost = 10
+		mutually_exclusive = { focus = MLT_promote_fascist_ideas }
+        prerequisite = { focus = MLT_take_advantage_of_the_turmoil }
+		x = 4
+		y = 1
+        relative_position_id = MLT_take_advantage_of_the_turmoil
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mlt_repealed_constitution
+				add_idea = MLT_repealed_constitution_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_out_of_the_shadows
+		icon = GFX_goal_generic_communist_pride
+		cost = 10
+		x = -1
+		y = 1
+        relative_position_id = MLT_revolutionary_ideas
+		prerequisite = { focus = MLT_revolutionary_ideas }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_into_the_light
+		icon = GFX_goal_generic_communist_pride
+		cost = 10
+		x = 1
+		y = 1
+        relative_position_id = MLT_revolutionary_ideas
+		prerequisite = { focus = MLT_revolutionary_ideas }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+
+	###Naval Focuses###
+
+	focus = {
+		id = MLT_maltese_naval_yard
+		icon = GFX_goal_generic_naval_effort2
+		cost = 10
+		x = 28
+		y = 0
+        relative_position_id =
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+						116 = {
+								add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+				116 = {
+			add_extra_state_shared_building_slots = 1 }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_improve_grand_harbor
+		icon = GFX_goal_generic_blue_navy
+		cost = 5
+		x = -1
+		y = 1
+        relative_position_id = MLT_maltese_naval_yard
+		prerequisite = { focus = MLT_maltese_naval_yard }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+					116 = {
+								add_building_construction = {
+					type = naval_base
+					province = 12003
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_fortify_grand_harbor
+		icon = GFX_goal_generic_fortification
+		cost = 5
+		x = 1
+		y = 1
+        relative_position_id = MLT_maltese_naval_yard
+		prerequisite = { focus = MLT_maltese_naval_yard }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			116 = {
+								add_building_construction = {
+					type = coastal_bunker
+					province = 12003
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_naval_expansion
+		icon = GFX_goal_generic_expand_the_naval_industry
+		cost = 10
+		x = 1
+		y = 1
+        relative_position_id = MLT_improve_grand_harbor
+		prerequisite = { focus = MLT_improve_grand_harbor}
+		prerequisite = { focus = MLT_fortify_grand_harbor}
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			116 = {
+			add_extra_state_shared_building_slots = 3 }
+			116 = {
+								add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_further_dockyard_expansion
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = -3
+		y = 1
+        relative_position_id = MLT_naval_expansion
+		prerequisite = { focus = MLT_naval_expansion }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			116 = {
+			add_extra_state_shared_building_slots = 2 }
+					116 = {
+								add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_purchase_foreign_ships
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = -1
+		y = 3
+        relative_position_id = MLT_further_dockyard_expansion
+		prerequisite = { focus = MLT_further_dockyard_expansion }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_acquire_british_ships
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = -1
+		y = 1
+        relative_position_id = MLT_purchase_foreign_ships
+		prerequisite = { focus = MLT_purchase_foreign_ships }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_acquire_american_ships
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = -3
+		y = 1
+        relative_position_id = MLT_purchase_foreign_ships
+		prerequisite = { focus = MLT_purchase_foreign_ships }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_acquire_italian_ships
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = 1
+		y = 1
+        relative_position_id = MLT_purchase_foreign_ships
+		prerequisite = { focus = MLT_purchase_foreign_ships }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_acquire_japanese_ships
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = 3
+		y = 1
+        relative_position_id = MLT_purchase_foreign_ships
+		prerequisite = { focus = MLT_purchase_foreign_ships }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_phoenician_heritage
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		x = 0
+		y = 1
+        relative_position_id = MLT_naval_expansion
+		prerequisite = { focus = MLT_naval_expansion }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			add_ideas = MLT_phoenician_heritage_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_the_admirality
+		icon = GFX_goal_generic_admirality
+		cost = 10
+		x = 3
+		y = 1
+        relative_position_id = MLT_naval_expansion
+		prerequisite = { focus = MLT_naval_expansion }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			navy_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_convoy_hunting
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		mutually_exclusive = { focus = MLT_escort_fleet }
+		x = 1
+		y = 1
+        relative_position_id = MLT_the_admirality
+		prerequisite = { focus = MLT_the_admirality }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_escort_fleet
+		icon = GFX_goal_generic_blue_navy
+		cost = 10
+		mutually_exclusive = { focus = MLT_convoy_hunting }
+		x = -1
+		y = 1
+        relative_position_id = MLT_the_admirality
+		prerequisite = { focus = MLT_the_admirality }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_stronghold_of_the_mediterranean
+		icon = GFX_goal_generic_fortification
+		cost = 7.2
+		x = 1
+		y = 1
+        relative_position_id = MLT_further_dockyard_expansion
+		prerequisite = { focus = MLT_further_dockyard_expansion }
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			116 = {
+								add_building_construction = {
+					type = naval_base
+					province = 12003
+					level = 3
+					instant_build = yes
+				}
+			}
+			116 = {
+								add_building_construction = {
+					type = coastal_bunker
+					province = 12003
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_naval_excercises
+		icon = GFX_goal_generic_fortification
+		cost = 10
+		x = 1
+		y = 1
+        relative_position_id = MLT_escort_fleet
+		prerequisite = { focus = MLT_escort_fleet
+						focus = MLT_convoy_hunting }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+				navy_experience = 25
+				add_doctrine_cost_reduction = {
+				name = navy_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_naval_buff
+		icon = GFX_goal_generic_fortification
+		cost = 10
+		x = 0
+		y = 3
+        relative_position_id = MLT_phoenician_heritage
+		prerequisite = { focus = MLT_phoenician_heritage }
+		prerequisite = { focus = MLT_naval_excercises }
+		prerequisite = { focus = MLT_stronghold_of_the_mediterranean }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_continue_the_fortification
+		icon = GFX_goal_generic_fortification
+		cost = 7.2
+		x = 1
+		y = 1
+        relative_position_id = MLT_stronghold_of_the_mediterranean
+		prerequisite = { focus = MLT_stronghold_of_the_mediterranean }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			116 = {
+								add_building_construction = {
+					type = coastal_bunker
+					province = 12003
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_request_illustrious
+		icon = GFX_goal_generic_fortification
+		cost = 10
+		x = -1
+		y = 1
+        relative_position_id = MLT_stronghold_of_the_mediterranean
+		prerequisite = { focus = MLT_stronghold_of_the_mediterranean }
+		ai_will_do = {
+			factor = 2
+		}
+		
+		completion_reward = {
+			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+}

@@ -1,0 +1,526 @@
+ideas = {
+    country = {
+        mlt_political_turmoil = {
+        
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = -0.30
+                stability_factor = -0.20
+            }
+        }
+    }
+    country = {
+        mlt_political_turmoil_1 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = -0.20
+                stability_factor = -0.15
+            }
+        }
+    }
+    country = {
+        mlt_political_turmoil_2 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = -0.20
+                stability_factor = -0.20
+                drift_defence_factor = -0.25
+                autonomy_gain = 0.3
+            }
+        }
+    }
+    country = {
+        mlt_repealed_constitution = {
+        
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                stability_factor = -0.05
+                political_power_factor = -0.10
+            }
+        }
+    }
+    country = {
+        mlt_italian_irredentism = {
+        
+            picture = generic_fascist_army
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            
+            modifier = {
+                war_support_factor = -0.10
+            }
+        }
+    }
+
+    country = {
+        mlt_the_language_question = {
+        
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                planning_speed = -0.25
+                mobilization_speed = -0.15       
+            }
+        }
+    }
+
+    #Maltese and English
+    country = {
+        mlt_the_language_question_1 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                research_speed_factor = 0.06
+                stability_factor = 0.05
+                fascism_drift = -0.01    
+            }
+        }
+    }
+
+    #Maltese and Italian
+    country = {
+        mlt_the_language_question_2 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                planning_speed = 0.10
+                mobilization_speed = 0.10
+                recruitable_population_factor = 0.05       
+            }
+        }
+    }
+
+    #All 3
+    country = {
+        mlt_the_language_question_3 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+                production_factory_max_efficiency_factor = 0.05
+                monthly_population = 0.10      
+            }
+        }
+    }
+
+
+    ###Political Turmoil Spirits###
+
+    country = {
+        MLT_political_turmoil_3 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = -0.15
+                stability_factor = -0.10
+            }
+        }
+    }
+
+    country = {
+        MLT_political_turmoil_4 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = -0.10
+                stability_factor = -0.05
+            }
+        }
+    }
+
+    country = {
+        MLT_political_stability = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_manpower_bonus
+            
+            modifier = {
+                political_power_gain = 0.15
+                stability_factor = 0.10
+            }
+        }
+    }
+
+
+
+    ###Democratic Related Spirits###
+
+    country = {
+        MLT_reinstated_constitution = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                stability_factor = 0.05
+                political_power_factor = 0.05
+                democratic_drift = 0.03
+            }
+        }
+    }
+
+    country = {
+        MLT_pearl_of_the_mediterranean_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                monthly_population = 0.50
+                weekly_manpower = 500
+            }
+        }
+    }
+
+    country = {
+        MLT_defenders_of_democracy_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                drift_defence_factor = 0.25
+                democratic_drift = 0.02
+                conscription = 0.03
+                army_core_defence_factor = 0.05
+                army_core_attack_factor = 0.05
+            }
+        }
+    }
+
+    country = {
+        MLT_mediterranean_democracy_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                boost_ideology_mission_factor = 0.50
+                propaganda_mission_factor = 0.25
+            }
+        }
+    }
+
+    country = {
+        MLT_champion_of_democracy_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                army_attack_factor = 0.10
+                army_defence_factor = 0.10
+                conscription = 0.02
+                weekly_manpower = 250
+            }
+        }
+    }
+
+    country = {
+        MLT_coalition_economic_support_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                production_speed_buildings_factor = 0.10
+                line_change_production_efficiency_factor = 0.05
+                production_factory_max_efficiency_factor = 0.05
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+    }
+
+    country = {
+        MLT_womens_rights_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                recruitable_population_factor = 0.10
+                conscription = 0.01
+            }
+        }
+    }
+
+
+
+
+    ###Fascist Related Spirits###
+
+    country = {
+        MLT_repealed_constitution_1 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                stability_factor = -0.05
+                political_power_factor = -0.10
+                fascism_drift = 0.05
+                autonomy_gain = 0.3
+            }
+        }
+    }
+
+
+    ###Communist Related Spirits###
+    
+    country = {
+        MLT_repealed_constitution_2 = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_fascist_army
+            
+            modifier = {
+                stability_factor = -0.05
+                political_power_factor = -0.10
+                communism_drift = 0.05
+                autonomy_gain = 0.3
+            }
+        }
+    }
+
+
+    ###Naval Related Spirits###
+
+    country = {
+        MLT_phoenician_heritage_idea = {
+        
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = generic_navy_bonus
+
+            equipment_bonus = {
+                convoy = {
+                    instant = yes
+                    build_cost_ic = -0.30
+                    }
+                }
+            
+            modifier = {
+                trade_opinion_factor = 0.20
+            }
+        }
+    }
+
+}

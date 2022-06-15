@@ -1,6 +1,13 @@
 ﻿capital = 116
 
-#oob = ""
+oob = "MLT_1936"
+
+add_ideas = {
+	mlt_political_turmoil
+	mlt_repealed_constitution
+	mlt_italian_irredentism
+	mlt_the_language_question
+}
 
 # Starting tech
 set_technology = {
@@ -10,46 +17,76 @@ set_technology = {
 	transport_plane1 = 1	
 	TIB_mountainous_people_tech = 1	
 	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	fighter = 1
 }
 
-set_convoys = 5
+set_convoys = 20
+
+recruit_character = MLT_charles_bonham_carter
+recruit_character = MLT_enrico_mizzi
+recruit_character = MLT_gerald_strickland
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 50
-	fascism = 8
-	communism = 15
-	neutrality = 27
+	democratic = 16
+	fascism = 14
+	communism = 8
+	neutrality = 62
 }
 
-create_country_leader = { #Pro Italian but democrat
+set_stability = 0.30
+set_war_support = 0.05
+set_research_slots = 3
+
+create_country_leader = {
+	name = "Charles Bonham-Carter"
+	desc = ""
+	picture = "gfx/leaders/r56_generic/r56_portrait_generic_politician_europe_2.dds"
+	expire = "1965.1.1"
+	ideology = conservatism_n
+	traits = {
+		war_veteran
+		reformer
+	}
+}
+
+create_country_leader = {
 	name = "Enrico Mizzi"
 	desc = ""
+	picture = "gfx/leaders/MLT/enrico_mizzi_leader.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		patriot
+		editor
+	}
+}
+
+create_country_leader = {
+	name = "Gerald Strickland"
+	desc = "Idiot"
 	picture = "gfx/leaders/Europe/portrait_europe_generic_4.dds"
 	expire = "1965.1.1"
 	ideology = conservatism
 	traits = {
-		dealbroker
+		
 	}
 }
 
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-	}
-	create_country_leader = {
-		name = "Malta Worker Councils"
-		desc = "POLITICS_R56_GROUP_DESC"
-		picture = "gfx/leaders/r56_generic/r56_generic_collective.dds"
-		expire = "1965.1.1"
-		ideology = marxism
-		traits = {
-			#
-		}
+create_country_leader = {
+	name = "Paul Boffa"
+	desc = ""
+	picture = "gfx/leaders/ENG/Portrait_Britain_Generic_1.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		
 	}
 }

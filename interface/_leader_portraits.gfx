@@ -8583,5 +8583,15 @@ spriteTypes = {
 		name = "GFX_Portrait_Ma_Hushan"
 		texturefile = "gfx/leaders/TNG/r56_TNG_Ma_Hushan.dds"
 	}
+	
+	###MLT
 
+	spriteType = {
+		name = "GFX_Enrico_Mizzi_Leader"
+		texturefile = "gfx/leaders/MLT/enrico_mizzi_leader.dds"
+	}
+	spriteType = {
+		name = "GFX_Enrico_Mizzi_Advisor"
+		texturefile = "gfx/leaders/MLT/enrico_mizzi_advisor.dds"
+	}
 }

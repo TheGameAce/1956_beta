@@ -12,7 +12,7 @@ focus_tree = {
 
 	default = no
 
-	continuous_focus_position = { x = 0 y = 0 }
+	continuous_focus_position = { x = 50 y = 1000 }
 
 	focus = {
 		id = PRC_recover_from_the_long_march

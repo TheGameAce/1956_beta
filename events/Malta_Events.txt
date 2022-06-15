@@ -1,0 +1,117 @@
+add_namespace = malta
+
+
+###Democratic Focus Tree Events###
+
+#Request Dominion Status - Event 1
+country_event = {
+	id = malta.1
+	title = malta.1.t
+	desc = malta.1.desc
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = malta.1.a
+		
+		ai_chance = {
+			factor = 90
+		}
+		
+
+	}
+}
+
+#Safeguard Gibraltar - Event 2
+country_event = {
+	id = malta.2
+	title = malta.2.t
+	desc = malta.2.desc
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = malta.2.a
+		
+		ai_chance = {
+			factor = 90
+		}
+		
+
+	}
+}
+
+#Safeguard Cyprus - Event 3
+country_event = {
+	id = malta.3
+	title = malta.3.t
+	desc = malta.3.desc
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = malta.3.a
+		
+		ai_chance = {
+			factor = 90
+		}
+		
+
+	}
+}
+
+#The Language Question - Event 4
+country_event = {
+	id = malta.4
+	title = malta.4.t
+	desc = malta.4.desc
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = malta.4.a
+		
+		ai_chance = {
+			factor = 33
+		}
+        effect_tooltip = {
+            MLT = {
+                swap_ideas = {
+                    remove_idea = MLT_the_language_question
+                    add_idea = MLT_the_language_question_1
+                }
+            }
+        }
+
+	}
+
+    option = { #
+		name = malta.4.b
+		
+		ai_chance = {
+			factor = 33
+		}
+		swap_ideas = {
+            remove_idea = MLT_the_language_question
+            add_idea = MLT_the_language_question_2
+        }
+
+	}
+
+    option = { #
+		name = malta.4.c
+		
+		ai_chance = {
+			factor = 3
+		}
+		swap_ideas = {
+            remove_idea = MLT_the_language_question
+            add_idea = MLT_the_language_question_3
+        }
+
+	}
+}

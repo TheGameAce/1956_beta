@@ -6840,6 +6840,14 @@ spriteType = {
 		texturefile = "gfx/interface/goals/generic/r56_goal_generic_islam_and_state.dds"
 	}
 
+
+	###MLT 
+	spriteType = {
+		name = "GFX_goal_MLT_the_council"
+		texturefile = "gfx/interface/goals/mal/MAL_the_council.dds"
+		}
+
+
 	# ISR
 	SpriteType = {
 		name = "GFX_goal_star_of_david"
